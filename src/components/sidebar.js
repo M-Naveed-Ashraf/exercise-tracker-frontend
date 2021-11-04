@@ -31,7 +31,7 @@ const Sidebar = () => {
 
                         <ul>
                             <li>
-                                <a href="./index.html" className="active text-decoration-none">
+                                <a onClick={ () => history.push('/main')} className="active text-decoration-none">
                                     <span><FaHome /></span>
                                     <span>Dashboard</span>
                                 </a>
@@ -55,7 +55,7 @@ const Sidebar = () => {
                                 </a>
                             </li>
                             <li>
-                                <a href="" onClick={() => history.push('/addNewTask')} className="text-decoration-none">
+                                <a onClick={() => history.push('/')} className="text-decoration-none">
                                     <span><FaUserAlt/></span>
                                     <span>login/sign up</span>
                                 </a>

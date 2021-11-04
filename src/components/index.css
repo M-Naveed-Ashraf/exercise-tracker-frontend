@@ -120,10 +120,42 @@ code {
 }
 
 
+.main-content {
+  margin-left: 250px;
+  min-height: 100vh;
+  background: var(--bg-body);
+  padding: 0.5rem 1rem;
+  transition: margin-left 300ms;
+}
+
 
 
 
 /* /SIDEBAR */
+
+
+/* Header */
+
+.addTask-wrapper {
+  background-color: var(--bg);
+  color: white;
+  text-align: center;
+  margin: 5px;
+  padding: 30px;
+  border-radius:  8px;
+  -webkit-border-radius:  8px;
+  -moz-border-radius:  8px;
+  box-shadow: 1px 1px 25px 1px rgba(8, 10, 48, 0.534);
+}
+
+.addTask-title h3 {
+  font-family: "Roboto";
+  font-weight: light;
+  letter-spacing: 1.25px;
+}
+
+
+/* /Header */
 
 
 /* CARD */
@@ -143,5 +175,47 @@ code {
   text-transform: uppercase;
 }
 
+
+/* /CARD */
+
+/* CARD */
+
+.card-wrapper {
+  font-family: 'Roboto';
+  
+}
+
+.card-wrapper .card {
+  background-color: var(--bg);
+  color: white;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+}
+
+.card h3 {
+  color: orange;
+  /* font-weight: bold; */
+  text-transform: uppercase;
+}
+
+.btn-edit-task a {
+  text-decoration: none;
+  color: rgb(209, 209, 209) !important;
+  cursor: pointer;
+  font-weight: lighter;
+  font-size: 0.95rem;
+}
+
+.card-list-items ul.user-constants {
+  padding-left: 0;
+}
+
+.card-list-items ul li {
+  list-style: none;
+  border-bottom: 1px solid rgba(209, 209, 209, 0.3);
+}
 
 /* /CARD */

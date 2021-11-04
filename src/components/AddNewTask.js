@@ -1,9 +1,34 @@
-import React from 'react'
-
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { AddTask } from '../actions/addTask';
+import Sidebar from './sidebar';
+import { useHistory } from 'react-router'
 function AddNewTask() {
+
+  const history = useHistory();
+
+  let [name, setName] = useState('');
+  let [Description, setDescription] = useState('');
+  let [startingTime, setStartingTime] = useState();
+  let [endingTime, setEndingTime] = useState();
+  let [date, setDate] = useState();
+  console.log(date);
+  console.log(startingTime, endingTime);
+  // let duration = endingTime - startingTime;
+  // console.log(duration);
+  // console.log(name);
+   const dispatch = useDispatch();
+
+   const addTaskEventHandler = () => {
+    dispatch(AddTask(name, Description, '', '', date));
+    history.push('/main')
+    // setIsSignup(true);
+  }
+
     return (
-    <form>
-      <div>
+    <>
+      <Sidebar></Sidebar>
+      <div className="main-content">
             {/* Add New Task */}
             <div className="add-task-container ml-4 mt-5 mb-5">
               <div className="task-heading col-lg-12 align-items-center">
@@ -14,13 +39,13 @@ function AddNewTask() {
                   <div className="card">
                     <div className="card-body">
                       {/* <img src="" alt="profile picture"> */}
-                      <form action="POST">
+                      <div>
                         <h3>Task Details:</h3>
                         <section>
                           <div className="form-group row">
                           <label htmlFor="userName" className="col-sm-3 col-form-lable mt-3">Name:</label>
                             <div className="col-sm-9 mt-3">
-                              <input type="text" className="form-control" id="userName" minLength="4" maxLength="16" />
+                              <input type="text" className="form-control" id="userName" minLength="4" maxLength="16" value={name} onChange={ (e) => setName(e.target.value)} />
                             </div>
                             <label htmlFor="userAge" className="col-sm-3 col-form-lable mt-3">Age:</label>
                             <div className="col-sm-9 mt-3">
@@ -60,7 +85,7 @@ function AddNewTask() {
                             </div>
                             <label htmlFor="userDesc" className="col-sm-3 col-form-lable mt-3">Description:</label>
                             {/* <label htmlfor="userDes">Description:</label> */}
-                            <textarea className="col-sm-9 col-form-lable mt-3" id="description" name="description" rows="4" cols="50" minLength="10" maxLength="100">
+                            <textarea className="col-sm-9 col-form-lable mt-3" id="description" name="description" rows="4" cols="50" minLength="10" maxLength="100" value={Description} onChange={(e) => setDescription(e.target.value)}>
                              
                             </textarea>
                           </div>
@@ -70,9 +95,9 @@ function AddNewTask() {
                                 <label for="userDuration" className="col-sm-3 col-form-lable mt-3">Duration:</label>
                                 <div className="col-sm-9 mt-3">
                                 <label for="userDuration" className="col-sm-3 col-form-lable mt-3">From:</label>
-                                <input type="time"  id="userAge" />
+                                <input type="time"  id="userAge" value={startingTime} onChange={ (e) => setStartingTime(e.target.value)} />
                                 <label for="userDuration" className="col-sm-3 col-form-lable mt-3">To:</label>
-                                <input type="time"  id="userAge" />
+                                <input type="time"  id="userAge" value={endingTime} onChange={ (e) => setEndingTime(e.target.value)} />
                                 </div>
                             </div>
                         </section>
@@ -80,14 +105,14 @@ function AddNewTask() {
                             <div className="form-group row">
                                 <label for="userDate" className="col-sm-3 col-form-lable mt-3">Date:</label>
                                 <div className="col-sm-9 mt-3">
-                                <input type="date" className="form-control" id="userAge" />
+                                <input type="date" className="form-control" id="userAge" value={date} onChange={(e) => setDate(e.target.value)} />
                                 </div>
                             </div>
                         </section> <br />
                         <div className="row no-gutters justify-content-end">
-                          <button className="btn">Submit</button>
+                          <button className="btn" onClick={ addTaskEventHandler }>Submit</button>
                         </div>
-                      </form>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -95,7 +120,7 @@ function AddNewTask() {
             </div>
             {/* /Add New Task */}
         </div> 
-    </form> 
+    </> 
     )};
 
 
