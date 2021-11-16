@@ -2,7 +2,11 @@ const initialData = {
     list: [{
         userName: 'abc',
         password: '123'
-    }]
+    },
+{
+    userName: 'ab',
+    password: '12'
+}]
 };
 
 const LoginReducer = (state=initialData, actions) => {

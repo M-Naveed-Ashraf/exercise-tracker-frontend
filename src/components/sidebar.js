@@ -1,5 +1,5 @@
 import React from "react";
-import { FaHome, FaTasks, FaHistory, FaCog, FaUserAlt, FaTimes } from "react-icons/fa";
+import { FaHome, FaTasks, FaCog, FaUserAlt, FaTimes } from "react-icons/fa";
 import { useHistory } from 'react-router';
 
 
@@ -9,14 +9,14 @@ const Sidebar = () => {
 
     return(
         <>
-            <div className="sidebar-wrapper">
+            {/* <div className="sidebar-wrapper"> */}
                 <div className="sidebar">
                     <div className="brand">
                         <span className="lab la-affiliatetheme"></span>
                         <h2>Fitin'fit</h2>
                         <div>
                             <label className="closebtn" for="hiddenToggleCheckBox" >
-                                <span className="FaTimes"></span>
+                                <span className="FaTimes"><FaTimes /></span>
                             </label>
                         </div>
                     </div>
@@ -29,7 +29,7 @@ const Sidebar = () => {
                             </div>
                         </div>
 
-                        <ul>
+                        <ul className="nav-links">
                             <li>
                                 <a onClick={ () => history.push('/main')} className="active text-decoration-none">
                                     <span><FaHome /></span>
@@ -37,19 +37,19 @@ const Sidebar = () => {
                                 </a>
                             </li>
                             <li>
-                                <a href="" className="text-decoration-none">
+                                <a onClick={ () => history.push('/tasks')} className="text-decoration-none">
                                     <span><FaTasks /></span>
                                     <span>Tasks</span>
                                 </a>
                             </li>
-                            <li>
-                                <a href="" className="text-decoration-none">
+                            {/* <li>
+                                <a className="text-decoration-none">
                                     <span><FaHistory /></span>
                                     <span>History</span>
                                 </a>
-                            </li>
+                            </li> */}
                             <li>
-                                <a href="" className="text-decoration-none">
+                                <a  className="text-decoration-none">
                                     <span><FaCog /></span>
                                     <span>Settings</span>
                                 </a>
@@ -57,13 +57,13 @@ const Sidebar = () => {
                             <li>
                                 <a onClick={() => history.push('/')} className="text-decoration-none">
                                     <span><FaUserAlt/></span>
-                                    <span>login/sign up</span>
+                                    <span>Logout</span>
                                 </a>
                             </li>
                         </ul>
                     </div>
                 </div>
-            </div>
+            {/* </div> */}
         </>
     );
 };

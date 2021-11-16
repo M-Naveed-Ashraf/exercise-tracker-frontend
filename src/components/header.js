@@ -10,8 +10,8 @@ const Header = () => {
 
         <>
 
-            <div className="addTask-wrapper">
-                <div className="row g-0 justify-content-center align-items-center">
+            <div className="addTask">
+                <div className="row w-100 justify-content-center align-items-center">
                     <div className="col-12">
                         <div className="addTask-title">
                             <h3>

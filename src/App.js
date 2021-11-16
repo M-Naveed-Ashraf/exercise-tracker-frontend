@@ -7,6 +7,7 @@ import "./components/addNewTask.css"
 import Signup from "./components/signup";
 import AddNewTask from "./components/AddNewTask";
 import Main from "./components/main";
+import TODo from "./components/ToDo";
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Route exact path="/signup" component={Signup}></Route>
         <Route exact path="/main" component={Main}></Route>
         <Route exact path="/addNewTask" component={AddNewTask}></Route>
+        <Route exact path="/tasks" component={TODo}></Route>
       </Switch>
     </Router>
   );

@@ -26,10 +26,12 @@ function Login() {
         return setPassword(e.target.value)
     }
     
-    const authentic = () => {
+    const authentic = (e) => {
+
+        e.preventDefault();
 
         if(userName === '' || password === ''){
-            return console.log('please enter the UserName and Password');
+            return alert('please enter the UserName and Password');
         }
         else {
             list.forEach( (data) => {
@@ -41,7 +43,8 @@ function Login() {
             })
             console.log(isAuth);
             if(!isAuth) {
-                return console.log('please enter the correct credentials (userName: abc, password: 123)');
+                // return console.log('please enter the correct credentials (userName: abc, password: 123)');
+                return document.getElementById('error').innerHTML = 'please enter the correct credentials (userName: abc, password: 123)';
             }
         }
         
@@ -51,21 +54,20 @@ function Login() {
     return (
         <div className="container">
             <div className="login-backdrop"></div>
-            <div class="container container-props">
-                <div class="row no-gutters justify-content-center">
-                    <div class="col col-sm-8 col-md-6 col-lg-4 align-self-start form-col-props">
-                        <h1 class="brand-icon text-center mb-5">fitin'fit</h1>
-                        <div class="login-form">
-                        <div class="form-group">
-                            <label for="login-username" class="sr-only">Username</label>
-                            <input type="text" id="login-username" class="form-control mb-4 login-input-props" placeholder="Username" value={userName} onChange={setInputs1} />
-                            <label for="login-password" class="sr-only">Password</label>
-                            <input type="password" id="login-password" class="form-control mb-5 login-input-props" placeholder="Password" value={password} onChange={setInputs2} />
+            <div class="container container-props mt-5">
+                <div class="row justify-content-center">
+                    <div class="col col-sm-8 col-md-6 col-lg-4  form-col-props">
+                        <h1 class="brand-icon text-center mb-3">fitin'fit</h1>
+                        <form class="login-form" onSubmit={authentic}>
+                        <div class="form-group mb-4">
+                            <label for="login-username" class="sr-only form-label text-light">Username</label>
+                            <input type="text" id="login-username" class="form-control mb-4 login-input-props" placeholder="Username" value={userName} onChange={setInputs1} required />
+                            <label for="login-password" class="sr-only form-label text-light">Password</label>
+                            <input type="password" id="login-password" class="form-control login-input-props mb-2" placeholder="Password" value={password} onChange={setInputs2} required />
+                            <b className="text-danger" id="error"></b>
                         </div>
-                            <button class="btn login-btn-props" onClick={ 
-                                authentic
-                            }>get started</button>
-                        </div>
+                            <button type="submit" class="btn login-btn-props" >get started</button>
+                        </form>
                         <div class="links">
                             <span onClick={() => history.push('./signup')}  class="signup-link">create account</span>
                         </div>

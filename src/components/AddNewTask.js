@@ -14,15 +14,12 @@ function AddNewTask() {
   let [date, setDate] = useState();
   console.log(date);
   console.log(startingTime, endingTime);
-  // let duration = endingTime - startingTime;
-  // console.log(duration);
-  // console.log(name);
    const dispatch = useDispatch();
 
-   const addTaskEventHandler = () => {
+   const addTaskEventHandler = (e) => {
+     e.preventDefault();
     dispatch(AddTask(name, Description, '', '', date));
-    history.push('/main')
-    // setIsSignup(true);
+    history.push('/main');
   }
 
     return (
@@ -39,13 +36,13 @@ function AddNewTask() {
                   <div className="card">
                     <div className="card-body">
                       {/* <img src="" alt="profile picture"> */}
-                      <div>
+                      <form onSubmit={addTaskEventHandler}>
                         <h3>Task Details:</h3>
                         <section>
                           <div className="form-group row">
                           <label htmlFor="userName" className="col-sm-3 col-form-lable mt-3">Name:</label>
                             <div className="col-sm-9 mt-3">
-                              <input type="text" className="form-control" id="userName" minLength="4" maxLength="16" value={name} onChange={ (e) => setName(e.target.value)} />
+                              <input type="text" className="form-control" id="userName" minLength="2" maxLength="30" value={name} onChange={ (e) => setName(e.target.value)} required />
                             </div>
                             <label htmlFor="userAge" className="col-sm-3 col-form-lable mt-3">Age:</label>
                             <div className="col-sm-9 mt-3">
@@ -85,7 +82,7 @@ function AddNewTask() {
                             </div>
                             <label htmlFor="userDesc" className="col-sm-3 col-form-lable mt-3">Description:</label>
                             {/* <label htmlfor="userDes">Description:</label> */}
-                            <textarea className="col-sm-9 col-form-lable mt-3" id="description" name="description" rows="4" cols="50" minLength="10" maxLength="100" value={Description} onChange={(e) => setDescription(e.target.value)}>
+                            <textarea className="col-sm-9 col-form-lable mt-3" id="description" name="description" rows="4" cols="50" minLength="10" maxLength="100" value={Description} onChange={(e) => setDescription(e.target.value)} required>
                              
                             </textarea>
                           </div>
@@ -105,14 +102,14 @@ function AddNewTask() {
                             <div className="form-group row">
                                 <label for="userDate" className="col-sm-3 col-form-lable mt-3">Date:</label>
                                 <div className="col-sm-9 mt-3">
-                                <input type="date" className="form-control" id="userAge" value={date} onChange={(e) => setDate(e.target.value)} />
+                                <input type="date" className="form-control" id="userAge" value={date} onChange={(e) => setDate(e.target.value)} required />
                                 </div>
                             </div>
                         </section> <br />
                         <div className="row no-gutters justify-content-end">
-                          <button className="btn" onClick={ addTaskEventHandler }>Submit</button>
+                          <button type="submit" className="btn">Submit</button>
                         </div>
-                      </div>
+                      </form>
                     </div>
                   </div>
                 </div>
