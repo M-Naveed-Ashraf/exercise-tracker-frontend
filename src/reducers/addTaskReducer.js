@@ -7,16 +7,16 @@ const AddTaskReducer = (state=initialData, actions) => {
     switch (actions.type) {
         case 'Add_Task':
             
-            const {Id, Name, Description, Activity_Type, Duration, Task_Date} = actions.payLoad;
+            const { Name, description, Activity_Type, Duration, Task_Date} = actions.payLoad;
 
             return {
                 ...state,
                 list: [
                     ...state.list,
                     {
-                        Id: Id,
+                        // Id: Id,
                         Name: Name,
-                        Description: Description,
+                        Description: description,
                         Activity_Type: Activity_Type,
                         Duration: Duration,
                         Task_Date: Task_Date

@@ -1,4 +1,4 @@
-export const AddTask = (Name, Description, Activity_type, Duration, Task_Date) => {
+export const AddTask = (Name, Description, Activity_Type, Duration, Task_Date) => {
     const getDateAsId = () =>{
         return new Date().getTime().toString();
     }
@@ -9,7 +9,7 @@ export const AddTask = (Name, Description, Activity_type, Duration, Task_Date) =
             Id: getDateAsId(),
             Name: Name,
             Description: Description,
-            Activity_type: Activity_type,
+            Activity_Type: Activity_Type,
             Duration: Duration, 
             Task_Date: Task_Date
         }

@@ -10,7 +10,7 @@ import Header from './header';
 import TopNavbar from './Topnavbar';
 
 function Main() {
-    const list = useSelector( (data) => data.AddTaskReducer.list);
+    const list = useSelector( (data) => data.RetrieveData.list);
     // let history = useHistory()
 
     return (

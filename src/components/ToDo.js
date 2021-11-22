@@ -57,7 +57,7 @@ function ToDo() {
                                     <td key={`key01-${elem.Id}`}>{elem.Id}</td>
                                     <td key={`key02-${elem.Id}`}>{elem.Name}</td>
                                     <td key={`key03-${elem.Id}`}>{elem.Description}</td>
-                                    <td key={`key04-${elem.Id}`}><FaRunning /> Running</td>
+                                    <td key={`key04-${elem.Id}`}><FaRunning /> {elem.Activity_Type}</td>
                                     <td key={`key05-${elem.Id}`}>15 Minutes</td>
                                     <td key={`key06-${elem.Id}`}>{elem.Task_Date}</td>
                                 </tr>

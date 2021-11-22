@@ -9,16 +9,17 @@ function AddNewTask() {
 
   let [name, setName] = useState('');
   let [Description, setDescription] = useState('');
+  let [exerciseType, setExerciseType] = useState('');
   let [startingTime, setStartingTime] = useState();
   let [endingTime, setEndingTime] = useState();
   let [date, setDate] = useState();
-  console.log(date);
-  console.log(startingTime, endingTime);
+
+
    const dispatch = useDispatch();
 
    const addTaskEventHandler = (e) => {
      e.preventDefault();
-    dispatch(AddTask(name, Description, '', '', date));
+    dispatch(AddTask(name, Description, exerciseType, '', date));
     history.push('/main');
   }
 
@@ -70,8 +71,8 @@ function AddNewTask() {
                           <div className="form-group row">
                             <label htmlFor="userTasks" className="col-sm-3 col-form-lable">Select Task:</label>
                             <div className="col-sm-9">
-                              <select id="userTasks" name="userTasks" className="w-100">
-                                <option value selected="selected" className="text-grey">Please Select</option>
+                              <select id="userTasks" name="userTasks" className="w-100" onChange={ (e) => setExerciseType(e.target.value)}>
+                                <option selected="selected" className="text-grey">Please Select</option>
                                 <option value="Walking">Walking</option>
                                 <option value="Running">Running</option>
                                 <option value="Riding">Riding</option>
