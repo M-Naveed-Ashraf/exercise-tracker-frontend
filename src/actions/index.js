@@ -1,6 +1,6 @@
 import * as api from '../api/index.js';
 
-export const getExercises = () => (dispatch) => {
+export const getExercises = (dispatch) => {
   try {
     const res = api.retrieveData();
     
