@@ -11,7 +11,7 @@ import TopNavbar from './Topnavbar';
 function Main(props) {
     useEffect(() => {
         props.fetchUsers();
-    }, [props]);
+    });
     return (
         <>
             <input type="checkbox" name="hiddenToggleCheckBox" id="hiddenToggleCheckBox"></input>
