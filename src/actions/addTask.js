@@ -18,7 +18,7 @@ export const AddTask = (Name, Description, Activity_Type, Duration, Task_Date) =
           .catch(error => {
             // error.message is the error message
             console.log(error.message);
-          })
+          });
     }
       
 
