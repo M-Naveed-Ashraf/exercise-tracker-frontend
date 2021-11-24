@@ -62,7 +62,7 @@ const Sidebar = () => {
                                 </a>
                             </li>
                             <li>
-                                <a href={url} onClick={() => {
+                                <a href={url} onClick={(e) => {
                                     e.preventDefault();
                                     history.push('/')
                                     }} className="text-decoration-none">
