@@ -10,7 +10,7 @@ export const AddTask = (Name, Description, Activity_Type, Duration, Task_Date) =
         }
         
         axios
-          .post('http://localhost:5000/addNewTask', data)
+          .post('https://excercise-tracker-fp.herokuapp.com/addNewTask', data)
           .then( (res)=> {
             console.log(res);
             dispatch(addTaskSuccess(data));
