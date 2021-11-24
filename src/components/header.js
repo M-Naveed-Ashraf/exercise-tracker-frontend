@@ -1,5 +1,5 @@
 import React from "react";
-import { FaRunning, FaCheck, FaEdit } from "react-icons/fa";
+// import { FaRunning, FaCheck, FaEdit } from "react-icons/fa";
 import { useHistory } from 'react-router';
 
 const Header = () => {

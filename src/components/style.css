@@ -33,7 +33,7 @@
     width: 50px;
 }
 
-#hiddenToggleCheckBox:checked ~ .sidebar li a span:last-child {
+#hiddenToggleCheckBox:checked ~ .sidebar li div span:last-child {
     display: none;
 }
 
@@ -148,7 +148,7 @@ input, button {
     margin-bottom: 0.9rem;
 }
 
-.sidemenu a {
+.sidemenu div {
     color: #fff;
     font-size: .85rem;
     display: flex;
@@ -157,12 +157,12 @@ input, button {
     cursor: pointer;
 }
 
-.sidemenu a span:first-child {
+.sidemenu div span:first-child {
     font-size: 1.3rem;
     padding: 0rem .6rem;
 }
 
-.sidemenu a.active {
+.sidemenu div.active {
     background: var(--main);
     color: #fff;
     border-radius: 4px;
@@ -446,7 +446,7 @@ main {
         width: 50px;
     }
     
-    #hiddenToggleCheckBox ~ .sidebar li a span:last-child {
+    #hiddenToggleCheckBox ~ .sidebar li div span:last-child {
         display: none;
     }
     
@@ -478,7 +478,7 @@ main {
         width: 120px;
     }
     
-    #hiddenToggleCheckBox:checked ~ .sidebar li a span:last-child {
+    #hiddenToggleCheckBox:checked ~ .sidebar li div span:last-child {
         display: inline-block;
     }
     

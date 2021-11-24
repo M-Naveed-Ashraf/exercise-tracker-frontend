@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaCheck, FaEdit } from "react-icons/fa";
+import { FaCheck } from "react-icons/fa";
 
 function CardBtn(props) {
 

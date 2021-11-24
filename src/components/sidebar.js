@@ -4,6 +4,7 @@ import { useHistory } from 'react-router';
 
 
 const Sidebar = () => {
+    let url="";
 
     let history = useHistory()
 
@@ -31,13 +32,13 @@ const Sidebar = () => {
 
                         <ul className="nav-links">
                             <li>
-                                <a onClick={ () => history.push('/main')} className="active text-decoration-none">
+                                <a href={url} onClick={ () => history.push('/main')} className="active text-decoration-none">
                                     <span><FaHome /></span>
                                     <span>Dashboard</span>
                                 </a>
                             </li>
                             <li>
-                                <a onClick={ () => history.push('/tasks')} className="text-decoration-none">
+                                <a href={url} onClick={ () => history.push('/tasks')} className="text-decoration-none">
                                     <span><FaTasks /></span>
                                     <span>Tasks</span>
                                 </a>
@@ -49,13 +50,13 @@ const Sidebar = () => {
                                 </a>
                             </li> */}
                             <li>
-                                <a  className="text-decoration-none">
+                                <a href={url} className="text-decoration-none">
                                     <span><FaCog /></span>
                                     <span>Settings</span>
                                 </a>
                             </li>
                             <li>
-                                <a onClick={() => history.push('/')} className="text-decoration-none">
+                                <a href={url} onClick={() => history.push('/')} className="text-decoration-none">
                                     <span><FaUserAlt/></span>
                                     <span>Logout</span>
                                 </a>

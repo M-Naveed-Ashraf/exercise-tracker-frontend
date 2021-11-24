@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { connect } from 'react-redux';
 import { fetchUsers } from '../actions/test';
-// import { FaRunning, FaCheck, FaEdit } from "react-icons/fa";
 import CardBtn from "./cardBtn";
 // import CardHeader from "./cardHeader";
 
@@ -9,7 +8,7 @@ import CardBtn from "./cardBtn";
 const Card = (props) => {
     useEffect(() => {
         props.fetchUsers();
-    }, [])
+    }, [props])
     return(
         <>
         {

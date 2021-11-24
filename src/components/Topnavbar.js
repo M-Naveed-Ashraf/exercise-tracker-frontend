@@ -1,5 +1,5 @@
 import React from "react";
-import { FaBell, FaBookmark, FaCommentAlt, FaSearch, FaBars } from "react-icons/fa";
+import { FaBell, FaBookmark, FaCommentAlt, FaBars } from "react-icons/fa";
 
 const TopNavbar = () => {
 

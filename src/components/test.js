@@ -5,7 +5,7 @@ import { fetchUsers } from '../actions/test'
 function UsersContainer (props) {
     useEffect(() => {
         props.fetchUsers();
-    }, [])
+    }, [props])
     console.log(props.list)
   return (
     <div>

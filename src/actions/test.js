@@ -9,7 +9,7 @@ export const fetchUsers = () => {
   return (dispatch) => {
     dispatch(fetchUsersRequest())
     axios
-      .get('http://localhost:5000/main')
+      .get('https://excercise-tracker-fp.herokuapp.com/main')
       .then(response => {
         // response.data is the users
         const users = response.data.data

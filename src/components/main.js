@@ -5,14 +5,13 @@ import './index.css';
 import Card from './card';
 import { connect } from 'react-redux'
 import { fetchUsers } from '../actions/test'
-import AddTaskReducer from '../reducers/addTaskReducer';
 import Header from './header';
 import TopNavbar from './Topnavbar';
 
 function Main(props) {
     useEffect(() => {
         props.fetchUsers();
-    }, []);
+    }, [props]);
     return (
         <>
             <input type="checkbox" name="hiddenToggleCheckBox" id="hiddenToggleCheckBox"></input>

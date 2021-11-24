@@ -1,17 +1,33 @@
+import axios from 'axios'
 export const AddTask = (Name, Description, Activity_Type, Duration, Task_Date) => {
-    const getDateAsId = () =>{
-        return new Date().getTime().toString();
-    }
+    // const getDateAsId = async () =>{
+    //     return new Date().getTime().toString();
+    // }
 
+    return (dispatch) => {
+        const data = {
+            title: Name
+        }
+        
+        axios
+          .post('http://localhost:5000/addNewTask', data)
+          .then( (res)=> {
+            console.log(res);
+            dispatch(addTaskSuccess(data));
+          })
+          .catch(error => {
+            // error.message is the error message
+            console.log(error.message);
+          })
+    }
+      
+
+    
+}
+
+export const addTaskSuccess = (data) => {
     return {
         type: "Add_Task",
-        payLoad: {
-            Id: getDateAsId(),
-            Name: Name,
-            Description: Description,
-            Activity_Type: Activity_Type,
-            Duration: Duration, 
-            Task_Date: Task_Date
-        }
+        payLoad: data
     }
 }
