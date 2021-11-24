@@ -32,13 +32,19 @@ const Sidebar = () => {
 
                         <ul className="nav-links">
                             <li>
-                                <a href={url} onClick={ () => history.push('/main')} className="active text-decoration-none">
+                                <a href={url} onClick={ (e) => {
+                                    e.preventDefault();
+                                    history.push('/main')
+                                    }} className="active text-decoration-none">
                                     <span><FaHome /></span>
                                     <span>Dashboard</span>
                                 </a>
                             </li>
                             <li>
-                                <a href={url} onClick={ () => history.push('/tasks')} className="text-decoration-none">
+                                <a href={url} onClick={ (e) => {
+                                    e.preventDefault();
+                                    history.push('/tasks')
+                                    }} className="text-decoration-none">
                                     <span><FaTasks /></span>
                                     <span>Tasks</span>
                                 </a>
@@ -56,7 +62,10 @@ const Sidebar = () => {
                                 </a>
                             </li>
                             <li>
-                                <a href={url} onClick={() => history.push('/')} className="text-decoration-none">
+                                <a href={url} onClick={() => {
+                                    e.preventDefault();
+                                    history.push('/')
+                                    }} className="text-decoration-none">
                                     <span><FaUserAlt/></span>
                                     <span>Logout</span>
                                 </a>
